@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+:root {
+  --color-primary  : #21244D;
+  --color-secondary: #4A26AB;
+  --color-accent   : #E350A8;
+  --color-accent-2 : #9543A7;
+  --color-bluesky  : #B8E7EA;
+
+}
+
+
+
+@font-face {
+  font-family: "beaurivage";
+  src        : url("./fonts/beaurivage-regular-webfont.woff");
+
+  font-family: "beaurivage2";
+  src        : url("./fonts/beaurivage-regular-webfont.woff2");
+}
+
+:root {
+  --card-width: 155px;
+}
+
+body {
+  margin : 0;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color       : #21244D;
+  color                  : white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* container */
+
+.container {
+  max-width: 1140px;
+  margin   : 0 auto;
+}
+
+/* Grids */
+
+.grid {
+  display: grid;
+}
+
+.grid--1x2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--1x5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--cardWidth {
+  grid-template-columns: repeat(5, var(--card-width));
+  gap                  : 0.25rem;
+}
+
+/* text */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin : 0;
+}

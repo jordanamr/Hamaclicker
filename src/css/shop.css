@@ -1,0 +1,103 @@
+/* Cards */
+
+.deck {
+  font-family: "beaurivage", cursive;
+}
+
+.card {
+  transition      : 0.5s;
+  color           : white;
+  text-align      : center;
+  position        : relative;
+  height          : 420px;
+  background-color: var(--color-secondary);
+  padding         : 10px;
+  margin          : 0.25rem;
+  border-radius   : 0.5rem;
+  border          : 1px rgba(163, 163, 163, 0.151) solid;
+  cursor          : pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__image {
+  border-radius: 50%;
+  width        : 75%;
+  padding      : 1.5rem 0;
+}
+
+.card__title {
+  font-family: "beaurivage2", "beaurivage";
+  font-size  : 2rem;
+  color      : var(--color-accent);
+}
+
+.card__score {
+  position        : absolute;
+  top             : 0;
+  left            : 0;
+  font-family     : "Poiret One", cursive;
+  font-weight     : bold;
+  border-radius   : 0.5rem;
+  color           : rgb(255, 255, 255);
+  opacity         : initial;
+  padding         : 0.3rem;
+  background-color: var(--color-accent-2);
+}
+
+.card__description {
+  font-family: "Poiret One", cursive;
+  margin-top : 1.5rem;
+  font-weight: lighter;
+  font-size  : 1.15rem;
+}
+
+/* Lock unlock cards */
+
+.locked {
+  filter    : grayscale(1);
+  /* opacity: 0.5; */
+}
+
+.unlocked {
+
+  animation-name    : unlocked;
+  animation-duration: 1s;
+}
+
+@keyframes unlocked {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Passive points and points */
+
+.card__points {
+  position        : absolute;
+  bottom          : 0;
+  left            : 0;
+  border-radius   : 0.5rem;
+  padding         : 0.3rem;
+  background-color: var(--color-accent-2);
+}
+
+.card__points--passive {
+  position        : absolute;
+  bottom          : 0;
+  right           : 0;
+  border-radius   : 0.5rem;
+  padding         : 0.3rem;
+  background-color: var(--color-accent-2);
+}
+
+.card__points--passive:hover::before{
+  content: "Points Passif +";
+  
+}

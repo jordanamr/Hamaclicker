@@ -1,0 +1,56 @@
+.deck {
+    width         : 100%;
+    padding-bottom: 4rem;
+}
+
+.card--deck {
+    transition      : 0.5s;
+    color           : white;
+    text-align      : center;
+    position        : relative;
+    width           : 155px;
+    height          : 185px;
+    background-color: var(--color-secondary);
+    padding         : 10px;
+    border-radius   : 0.5rem;
+    border          : 1px rgba(163, 163, 163, 0.164) solid;
+}
+
+.card__image--deck {
+    border-radius : 50%;
+    width         : 75%;
+    padding-bottom: 1rem;
+}
+
+.card__title--deck {
+    font-family: "beaurivage2", "beaurivage";
+    font-size  : 2rem;
+    color      : var(--color-accent);
+}
+
+.card__score--deck {
+    font-family  : "Poiret One", cursive;
+    font-weight  : bold;
+    border-radius: 50%;
+    color        : black;
+    opacity      : 1 !important;
+    padding      : 0.3rem;
+}
+
+.card__description--deck {
+    font-family: "Poiret One", cursive;
+    margin-top : 1.5rem;
+    font-weight: lighter;
+    font-size  : 1.15rem;
+}
+
+.card__count {
+    font-family     : "beaurivage";
+    color           : white;
+    position        : absolute;
+    top             : -10px;
+    left            : -5px;
+    background-color: var(--color-accent-2);
+    border-radius   : 0.25rem;
+    padding         : 0.25rem;
+}
