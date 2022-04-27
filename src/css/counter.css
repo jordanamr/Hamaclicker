@@ -15,3 +15,15 @@
   font-size: 4.1rem;
 }
 
+.score__popup{
+  font-family: "beaurivage", cursive;
+  position: absolute;
+  color: rgb(223, 70, 70);
+  top: 5%;
+  left: 50%;
+  transform: translateX(-51%);
+  animation-name: smooth;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  letter-spacing: 1px;
+}

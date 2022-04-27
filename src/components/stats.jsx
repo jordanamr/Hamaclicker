@@ -4,8 +4,8 @@ import "../css/stats.css";
 const Stats = ({ users, cards }) => {
   return (
     <div className="stats">
-      <h1 className="stats__heading">Bonus actuel</h1>
-      <div className="stats__bonus grid grid--1x2">
+      {/* <h1 className="stats__heading">Bonus actuel</h1> */}
+      <div className="stats__bonus grid grid--1x3">
         {users.map((user) =>
           cards.map((card) =>
             card.count >= 1 && user.username === card.username ? (

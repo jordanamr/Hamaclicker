@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import "../css/counter.css";
 
 import Stats from "./stats";
@@ -11,22 +11,22 @@ const Counter = ({
   users,
   cards,
 }) => {
-  
   useEffect(() => {
-    document.title = `Tu as ${score} Hamacoins!`
-
+    document.title = `Tu as ${score} Hamacoins!`;
   }, [score]);
 
   return (
     <>
-      <div className="score grid grid--1x2">
-        <div>
-          <h4 className="score__points" onClick={raiseClicked}>{score}</h4>
+      <div className="score grid grid--1x3">
+        <Deck users={users} cards={cards} />
+        <div className="score__container">
+          <h4 className="score__points" onClick={raiseClicked}>
+            {score}
+          </h4>
           <p>{passivePointPerSeconds} par seconde</p>
         </div>
         <Stats users={users} cards={cards} />
       </div>
-      <Deck users={users} cards={cards} />
     </>
   );
 };

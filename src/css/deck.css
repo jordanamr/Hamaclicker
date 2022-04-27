@@ -1,5 +1,6 @@
 .deck {
     width         : 100%;
+    justify-content: center;
     padding-bottom: 4rem;
 }
 
@@ -8,8 +9,8 @@
     color           : white;
     text-align      : center;
     position        : relative;
-    width           : 155px;
-    height          : 185px;
+    width           : 125px;
+    height          : 155px;
     background-color: var(--color-secondary);
     padding         : 10px;
     border-radius   : 0.5rem;
@@ -24,7 +25,7 @@
 
 .card__title--deck {
     font-family: "beaurivage2", "beaurivage";
-    font-size  : 2rem;
+    font-size  : 1.75rem;
     color      : var(--color-accent);
 }
 

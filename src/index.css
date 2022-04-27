@@ -20,7 +20,7 @@
 }
 
 :root {
-  --card-width: 155px;
+  --card-width: 125px;
 }
 
 body {
@@ -61,12 +61,17 @@ code {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid--1x3 {
+  grid-template-columns: repeat(3, 33%);
+}
+
 .grid--1x5 {
   grid-template-columns: repeat(5, 1fr);
 }
 
 .grid--cardWidth {
-  grid-template-columns: repeat(5, var(--card-width));
+  height               : 155px;
+  grid-template-columns: repeat(3, var(--card-width));
   gap                  : 0.25rem;
 }
 
@@ -81,4 +86,16 @@ h6,
 p {
   padding: 0;
   margin : 0;
+}
+
+/* Animations */
+
+@keyframes smooth {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
 }

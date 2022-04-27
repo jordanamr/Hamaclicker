@@ -1,12 +1,9 @@
 .stats {
     font-family        : "Poiret One", "sans-cursive";
-    /* background-color: var(--color-primary); */
     height             : fit-content;
     padding            : 0.5rem;
-    width              : 60%;
-    margin-left        : auto;
     color              : white;
-    border-radius      : 0.5rem;
+    border-radius      : 0.52rem;
 }
 
 .stats__heading {

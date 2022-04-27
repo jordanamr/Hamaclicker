@@ -40,7 +40,7 @@ class App extends Component {
     console.log(card.username);
     const currentObject = users.filter((e) => e.username === card.username);
     if (currentObject[0].prices > this.state.score) {
-      alert("pas assez igo");
+      document.querySelector('.score__container').innerHTML += `<h3 class="score__popup"> Pas assez de Hamacoins </h3>`
     } else {
       for (const i of cards) {
         if (i.username === card.username) {
