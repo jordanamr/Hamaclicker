@@ -1,12 +1,14 @@
 .deck {
-    width         : 100%;
+    width          : 100%;
     justify-content: center;
-    padding-bottom: 4rem;
+    padding-bottom : 4rem;
+
 }
 
 .card--deck {
     transition      : 0.5s;
     color           : white;
+    animation       : smooth 1.5s linear;
     text-align      : center;
     position        : relative;
     width           : 125px;

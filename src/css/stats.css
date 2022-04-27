@@ -1,9 +1,9 @@
 .stats {
-    font-family        : "Poiret One", "sans-cursive";
-    height             : fit-content;
-    padding            : 0.5rem;
-    color              : white;
-    border-radius      : 0.52rem;
+    font-family  : "Poiret One", "sans-cursive";
+    height       : fit-content;
+    padding      : 0.5rem;
+    color        : white;
+    border-radius: 0.52rem;
 }
 
 .stats__heading {
@@ -11,6 +11,7 @@
 }
 
 .stats__bonus {
+    animation     : smooth 1.5s linear;
     font-weight   : lighter;
     display       : grid;
     flex-direction: column;
