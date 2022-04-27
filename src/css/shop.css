@@ -98,6 +98,6 @@
 }
 
 .card__points--passive:hover::before{
-  content: "Points Passif +";
+  content: "Point Passif +";
   
 }

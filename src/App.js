@@ -30,6 +30,7 @@ class App extends Component {
 
   handleScore = () => {
     this.setState({ score: this.state.score + this.state.pointPerClicks });
+    
   };
 
   handleCardBuy = (card) => {

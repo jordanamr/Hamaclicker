@@ -31,7 +31,7 @@ const users = [
     username: "Powel",
     prices: 40,
     imgUrl:
-      "https://cdn.discordapp.com/avatars/669447902682415115/91c8bde1b60059902f027f3b14941148.webp?size=512",
+      "https://cdn.discordapp.com/avatars/669447902682415115/398c25ef8e3ba5fc597d5730d198849b.webp?size=512",
     description:
       "Powel améliore les points de +1 et intervient en cas de pépins via son réseau d'amis",
     bonusPerClick: 1,
