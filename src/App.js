@@ -30,17 +30,26 @@ class App extends Component {
 
   handleScore = () => {
     this.setState({ score: this.state.score + this.state.pointPerClicks });
-    
   };
 
   handleCardBuy = (card) => {
     const cards = [...this.state.cards];
     const users = [...this.state.users];
-
-    console.log(card.username);
     const currentObject = users.filter((e) => e.username === card.username);
+
+    // Handle Ouiki effect, 1 chance per 4 to get robbed
+    if (card.username === "Ouiki") {
+      let chance = Math.round(Math.random() * 4);
+      if (chance === 1) {
+        this.setState({ score: this.state.score - users[1].prices });
+        return alert("Ouiki a volé vos hamacoins, pas de chance");
+      }
+    }
+
     if (currentObject[0].prices > this.state.score) {
-      document.querySelector('.score__container').innerHTML += `<h3 class="score__popup"> Pas assez de Hamacoins </h3>`
+      document.querySelector(
+        ".score__container"
+      ).innerHTML += `<h3 class="score__popup"> Pas assez de Hamacoins </h3>`;
     } else {
       for (const i of cards) {
         if (i.username === card.username) {
