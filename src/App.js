@@ -11,11 +11,12 @@ import Counter from "./components/counter";
 class App extends Component {
   state = {
     users: [],
-    score: 2520,
+    score: 0,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
     isLoading: false,
+    welcomTip: true,
   };
 
   componentDidMount() {
@@ -38,10 +39,15 @@ class App extends Component {
   handleCardBuy = (card) => {
     const cards = [...this.state.cards];
     const users = [...this.state.users];
-    const currentObject = users.filter((user) => user.username === card.username);
-    const currentCard = cards.find((e) => e.username === card.username)
+    const currentObject = users.filter(
+      (user) => user.username === card.username
+    );
+    const currentCard = cards.find((e) => e.username === card.username);
 
-    if(currentCard.count >= 3) return alert("Maximum 3 cartes similaire! car pas encore fini de dev les bonus améliorés")
+    if (currentCard.count >= 3)
+      return alert(
+        "Maximum 3 cartes similaire! car pas encore fini de dev les bonus améliorés"
+      );
 
     // Handle Ouiki effect, 1 chance per 4 to get robbed
     if (card.username === "Ouiki") {
@@ -63,6 +69,11 @@ class App extends Component {
           i.count++;
         }
       }
+
+      // return to the top of the page
+
+      window.scrollTo(0, 0);
+
       this.setState({
         cards,
         score: this.state.score - currentObject[0].prices,
@@ -74,14 +85,24 @@ class App extends Component {
     }
   };
 
+  closeWelcomTip = () => {
+    this.setState({ welcomTip: false });
+  };
   render() {
-    const { users, score, passivePointPerSeconds, cards, isLoading } =
+    const { users, score, passivePointPerSeconds, cards, welcomTip } =
       this.state;
 
     return (
       <>
         <div className="container">
           {/* <Welcom/> */}
+
+          {welcomTip === true ? (
+            <div className="welcom__tip">
+              <span onClick={this.closeWelcomTip}> x </span>
+              Clique sur le chiffre pour gagner des Hamacoins
+            </div>
+          ) : null}
           <Counter
             score={score}
             passivePointPerSeconds={passivePointPerSeconds}

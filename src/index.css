@@ -9,8 +9,6 @@
 
 }
 
-
-
 @font-face {
   font-family: "beaurivage";
   src        : url("./fonts/beaurivage-regular-webfont.woff");
@@ -33,7 +31,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color       : #21244D;
   color                  : white;
+  scroll-behavior        : smooth;
 }
+
 
 * {
   box-sizing: border-box;
@@ -91,11 +91,11 @@ p {
 /* Animations */
 
 @keyframes smooth {
-  from{
+  from {
     opacity: 0;
   }
 
-  to{
+  to {
     opacity: 1;
   }
 }

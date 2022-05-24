@@ -1,11 +1,11 @@
 .score {
-  text-align   : center;
-  margin       : 6rem 0;
+  text-align: center;
+  margin    : 6rem 0;
 }
 
-.score__points{
+.score__points {
   font-size  : 4rem;
-  cursor     : pointer;
+  cursor     : crosshair;
   user-select: none;
   transition : 0.5s;
 }
@@ -15,15 +15,15 @@
   font-size: 4.1rem;
 }
 
-.score__popup{
-  font-family: "beaurivage", cursive;
-  position: absolute;
-  color: rgb(223, 70, 70);
-  top: 5%;
-  left: 50%;
-  transform: translateX(-51%);
-  animation-name: smooth;
+.score__popup {
+  font-family              : "beaurivage", cursive;
+  position                 : absolute;
+  color                    : rgb(223, 70, 70);
+  top                      : 5%;
+  left                     : 50%;
+  transform                : translateX(-51%);
+  animation-name           : smooth;
   animation-timing-function: linear;
-  animation-duration: 1s;
-  letter-spacing: 1px;
+  animation-duration       : 1s;
+  letter-spacing           : 1px;
 }

@@ -21,9 +21,10 @@ const Counter = ({
         <Deck users={users} cards={cards} />
         <div className="score__container">
           <h4 className="score__points" onClick={raiseClicked}>
-            {score}
+            {score} 
           </h4>
-          <p>{passivePointPerSeconds} par seconde</p>
+          <br/>
+          <p>{passivePointPerSeconds} hamacoins passif par seconde</p>
         </div>
         <Stats users={users} cards={cards} />
       </div>
