@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Petit+Formal+Script&display=swap');
+
+.loading {
+    font-family    : 'Petit Formal Script', cursive;
+    font-size      : 5rem;
+    margin         : 0;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    height         : 100vh;
+}

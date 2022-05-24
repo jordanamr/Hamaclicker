@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+.welcom {
+    background-color: white;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
+    height          : 100vh;
+    width           : 100vw;
+    transition      : 2s;
+    animation       : smooth 1s linear;
+    font-family     : 'Berkshire Swash', cursive;
+}
+
+.welcom img {
+    animation : smooth 2s linear;
+    transition: 2s;
+}
+
+.welcom h1 {
+    margin    : 3rem 0;
+    color     : rgb(27, 5, 88);
+    font-size : 5rem;
+    animation : smooth 2s linear;
+    transition: 2s;
+}
+
+.btn {
+    font-family     : 'Berkshire Swash', cursive;
+    border          : none;
+    border-radius   : 2rem;
+    padding         : 1rem 2rem;
+    font-size       : 2rem;
+    color           : white;
+    background-color: darkcyan;
+    transition      : 1s;
+    animation       : smooth 1s linear;
+}
+
+.btn:hover {
+    background-color: blueviolet;
+    color           : aliceblue;
+    cursor          : pointer;
+}
+
+.titleAnimation{
+    animation       : smooth 1s linear;
+}

@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { getUsers, getCardsCount } from "./services/users";
 import "./App.css";
+import Welcom from "./components/welcom";
 
-import Shop from "./components/shop";
-import Counter from "./components/counter";
-import Deck from "./components/deck";
+// import Shop from "./components/shop";
+// import Counter from "./components/counter";
+// import Deck from "./components/deck";
+// import Loading from "./components/loading";
 
 class App extends Component {
   state = {
     users: [],
-    score: 80,
+    score: 78,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
+    isLoading: false,
   };
 
   componentDidMount() {
@@ -68,18 +71,21 @@ class App extends Component {
   };
 
   render() {
-    const { users, score, passivePointPerSeconds, cards } = this.state;
+    // const { users, score, passivePointPerSeconds, cards, isLoading } =
+    //   this.state;
+
     return (
       <>
         <div className="container">
-          <Counter
+          <Welcom/>
+          {/* <Counter
             score={score}
             passivePointPerSeconds={passivePointPerSeconds}
             raiseClicked={this.handleScore}
             users={users}
             cards={cards}
           />
-          <Shop users={users} score={score} raiseCardBuy={this.handleCardBuy} />
+          <Shop users={users} score={score} raiseCardBuy={this.handleCardBuy} /> */}
         </div>
       </>
     );
