@@ -12,7 +12,7 @@ import Counter from "./components/counter";
 class App extends Component {
   state = {
     users: [],
-    score: 9999,
+    score: 0,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
@@ -46,7 +46,8 @@ class App extends Component {
     );
     const currentCard = cards.find((e) => e.username === card.username);
 
-    if(currentObject[0].username === "Kali Yuga") return this.setState({kaliYuga: true})
+    if (currentObject[0].username === "Kali Yuga")
+      return this.setState({ kaliYuga: true });
 
     if (currentCard.count >= 3)
       return alert(
@@ -105,7 +106,7 @@ class App extends Component {
             <div className="welcom__tip">
               <span onClick={this.closeWelcomTip}> fermer </span>
               Clique sur le chiffre pour gagner des Hamacoins et découvrir les
-              cartes
+              cartes (arrête de cheater Hanako)
             </div>
           ) : null}
 
