@@ -12,7 +12,7 @@ import Counter from "./components/counter";
 class App extends Component {
   state = {
     users: [],
-    score: 0,
+    score: 9999,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
@@ -46,6 +46,8 @@ class App extends Component {
     );
     const currentCard = cards.find((e) => e.username === card.username);
 
+    if(currentObject[0].username === "Kali Yuga") return this.setState({kaliYuga: true})
+
     if (currentCard.count >= 3)
       return alert(
         "Maximum 3 cartes similaire! car pas encore fini de dev les bonus améliorés"
@@ -61,7 +63,7 @@ class App extends Component {
     }
 
     // Handle if enought hamacoins to be able to buy a card
-    if (currentObject[0].prices > this.state.score) {
+    if (currentObject[0].prices >= this.state.score) {
       document.querySelector(
         ".score__container"
       ).innerHTML += `<h3 class="score__popup"> Pas assez de Hamacoins </h3>`;
@@ -147,14 +149,13 @@ class App extends Component {
                 <br />
               </div>
               <iframe
-                autoplay
                 width="100%"
                 height="750px"
                 src="https://www.youtube.com/embed/edMRZIAeBFM?autoplay=1"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           )}

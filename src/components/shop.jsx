@@ -4,7 +4,7 @@ import "../css/shop.css";
 class Shop extends Component {
   filterCards = () => {
     const users = [...this.props.users]
-    const usersSorted = users.filter(e => e.prices < this.props.score).sort((a, b) => a > b)
+    const usersSorted = users.filter(e => e.prices <= this.props.score).sort((a, b) => a > b)
 
     return usersSorted.map((e) => (
       <div
