@@ -30,3 +30,11 @@
     border-radius: 50%;
     border       : solid rgba(255, 255, 255, 0.10) 1px;
 }
+
+.bonus__container {
+    transition: transform 0.5s;
+}
+
+.bonus__container:hover {
+    transform: scale(1.1);
+}

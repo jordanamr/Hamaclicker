@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { getUsers, getCardsCount } from "./services/users";
 import "./App.css";
-import Welcom from "./components/welcom";
+// import Welcom from "./components/welcom";
 
-// import Shop from "./components/shop";
-// import Counter from "./components/counter";
+import Shop from "./components/shop";
+import Counter from "./components/counter";
 // import Deck from "./components/deck";
 // import Loading from "./components/loading";
 
 class App extends Component {
   state = {
     users: [],
-    score: 78,
+    score: 2520,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
@@ -38,7 +38,10 @@ class App extends Component {
   handleCardBuy = (card) => {
     const cards = [...this.state.cards];
     const users = [...this.state.users];
-    const currentObject = users.filter((e) => e.username === card.username);
+    const currentObject = users.filter((user) => user.username === card.username);
+    const currentCard = cards.find((e) => e.username === card.username)
+
+    if(currentCard.count >= 3) return alert("Maximum 3 cartes similaire! car pas encore fini de dev les bonus améliorés")
 
     // Handle Ouiki effect, 1 chance per 4 to get robbed
     if (card.username === "Ouiki") {
@@ -49,6 +52,7 @@ class App extends Component {
       }
     }
 
+    // Handle if enought hamacoins to be able to buy a card
     if (currentObject[0].prices > this.state.score) {
       document.querySelector(
         ".score__container"
@@ -71,21 +75,21 @@ class App extends Component {
   };
 
   render() {
-    // const { users, score, passivePointPerSeconds, cards, isLoading } =
-    //   this.state;
+    const { users, score, passivePointPerSeconds, cards, isLoading } =
+      this.state;
 
     return (
       <>
         <div className="container">
-          <Welcom/>
-          {/* <Counter
+          {/* <Welcom/> */}
+          <Counter
             score={score}
             passivePointPerSeconds={passivePointPerSeconds}
             raiseClicked={this.handleScore}
             users={users}
             cards={cards}
           />
-          <Shop users={users} score={score} raiseCardBuy={this.handleCardBuy} /> */}
+          <Shop users={users} score={score} raiseCardBuy={this.handleCardBuy} />
         </div>
       </>
     );

@@ -9,9 +9,11 @@ const Stats = ({ users, cards }) => {
         {users.map((user) =>
           cards.map((card) =>
             card.count >= 1 && user.username === card.username ? (
-              <div key={user.username}>
-                <img className="stats__imgBonus" src={user.imgBonus} alt="" />
-                <p>{user.bonus}</p>
+              <div className="bonus__container" key={user.username}>
+                <a style={{textDecoration: "none", color: "inherit"}} target="_blank" href={user.linkBonus}>
+                  <img className="stats__imgBonus" src={user.imgBonus} alt="" />
+                  <p>{user.bonus}</p>
+                </a>
               </div>
             ) : null
           )
