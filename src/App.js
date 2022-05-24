@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getUsers, getCardsCount } from "./services/users";
 import "./App.css";
+// import rouge from "./songs/rouge.mp3";
 // import Welcom from "./components/welcom";
 
 import Shop from "./components/shop";
@@ -17,6 +18,7 @@ class App extends Component {
     passivePointPerSeconds: 0,
     isLoading: false,
     welcomTip: true,
+    kaliYuga: false,
   };
 
   componentDidMount() {
@@ -89,7 +91,7 @@ class App extends Component {
     this.setState({ welcomTip: false });
   };
   render() {
-    const { users, score, passivePointPerSeconds, cards, welcomTip } =
+    const { users, score, passivePointPerSeconds, cards, welcomTip, kaliYuga } =
       this.state;
 
     return (
@@ -99,18 +101,63 @@ class App extends Component {
 
           {welcomTip === true ? (
             <div className="welcom__tip">
-              <span onClick={this.closeWelcomTip}> x </span>
-              Clique sur le chiffre pour gagner des Hamacoins
+              <span onClick={this.closeWelcomTip}> fermer </span>
+              Clique sur le chiffre pour gagner des Hamacoins et découvrir les
+              cartes
             </div>
           ) : null}
-          <Counter
-            score={score}
-            passivePointPerSeconds={passivePointPerSeconds}
-            raiseClicked={this.handleScore}
-            users={users}
-            cards={cards}
-          />
-          <Shop users={users} score={score} raiseCardBuy={this.handleCardBuy} />
+
+          {/* Music */}
+
+          {/* <div>
+            <audio autoPlay controls>
+              <source src={rouge} type="audio/mp3" />
+            </audio>
+          </div> */}
+
+          {/* View */}
+          {kaliYuga === false ? (
+            <div>
+              <Counter
+                score={score}
+                passivePointPerSeconds={passivePointPerSeconds}
+                raiseClicked={this.handleScore}
+                users={users}
+                cards={cards}
+              />
+              <Shop
+                users={users}
+                score={score}
+                raiseCardBuy={this.handleCardBuy}
+              />
+            </div>
+          ) : (
+            <div className="container">
+              <div style={{ textAlign: "center" }}>
+                <h1>
+                  Merci d'avoir joué à la Beta clé, promis je vais améliorer
+                  l'app{" "}
+                </h1>
+                <br />
+                <p>Le Kali Yuga a détruit l'app</p>
+                <br />
+                <p>
+                  Prochainement, + de cartes + de bonus + système d'event etc...
+                </p>
+                <br />
+              </div>
+              <iframe
+                autoplay
+                width="100%"
+                height="750px"
+                src="https://www.youtube.com/embed/edMRZIAeBFM?autoplay=1"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          )}
         </div>
       </>
     );

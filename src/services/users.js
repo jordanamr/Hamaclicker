@@ -57,7 +57,7 @@ const users = [
   },
   {
     username: "Lug",
-    prices: 400,
+    prices: 100,
     imgUrl:
       "https://cdn.discordapp.com/avatars/671504771990945844/ae3599f76084e346e66a0010ad4df01b.webp?size=512",
     description:
@@ -237,7 +237,21 @@ const users = [
     imgBonus:
       "https://image.noelshack.com/fichiers/2017/10/1488809412-1465699548-lopez.png",
     linkBonus: "https://fr.wikipedia.org/wiki/Gitans",
+  },
+  {
+    username: "Kali Yuga",
+    prices: 10000,
+    imgUrl:
+      "https://i1.sndcdn.com/artworks-000569287205-25jzjm-t500x500.jpg",
+    description: "La fin du Kali Yuga!",
+    bonusPerClick: 1000,
+    passiveBonus: 100,
+    bonus: "La fin du Kali Yuga",
+    imgBonus:
+      "https://i1.sndcdn.com/artworks-000569287205-25jzjm-t500x500.jpg",
+    linkBonus: "C'est fini",
   }
+
 ];
 
 export function getUsers() {
