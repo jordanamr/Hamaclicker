@@ -1,18 +1,15 @@
 import React, { Component } from "react";
 import { getUsers, getCardsCount } from "./services/users";
+
 import "./App.css";
-// import rouge from "./songs/rouge.mp3";
-// import Welcom from "./components/welcom";
 
 import Shop from "./components/shop";
 import Counter from "./components/counter";
-// import Deck from "./components/deck";
-// import Loading from "./components/loading";
 
 class App extends Component {
   state = {
     users: [],
-    score: 0,
+    score: 400,
     cards: [],
     pointPerClicks: 1,
     passivePointPerSeconds: 0,
@@ -56,7 +53,7 @@ class App extends Component {
 
     // Handle Ouiki effect, 1 chance per 4 to get robbed
     if (card.username === "Ouiki") {
-      let chance = Math.round(Math.random() * 4);
+      let chance = Math.round(Math.random() * 2);
       if (chance === 1) {
         this.setState({ score: this.state.score - users[1].prices });
         return alert("Ouiki a volé vos hamacoins, pas de chance");
@@ -76,7 +73,6 @@ class App extends Component {
       }
 
       // return to the top of the page
-
       window.scrollTo(0, 0);
 
       this.setState({

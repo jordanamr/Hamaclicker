@@ -4,9 +4,9 @@ import "../css/shop.css";
 class Shop extends Component {
   filterCards = () => {
     const users = [...this.props.users]
-    const usersSorted = users.filter(e => e.prices <= this.props.score).sort((a, b) => a > b)
+    // const usersSorted = users.filter(e => e.prices <= this.props.score)
 
-    return usersSorted.map((e) => (
+    return users.map((e) => (
       <div
         onClick={() => this.props.raiseCardBuy(e)}
         key={e.username}
@@ -26,7 +26,7 @@ class Shop extends Component {
     ))
   }
   render() {
-    // console.log("prices", this.props.users[0].prices, "score:", this.props.score);
+
     return (
       <section className="deck grid grid--1x5">
         {this.filterCards()}
