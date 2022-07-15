@@ -20,8 +20,26 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({ users: getUsers(), cards: getCardsCount() });
+    const save = JSON.parse(localStorage.getItem("save"));
+    if (save) {
+      console.log("Loading save...");
+      this.setState({ score: save.score });
+    }
     this.handlePassivePoints();
+    this.handleAutomaticSave();
   }
+
+  handleAutomaticSave = () => {
+    setInterval(() => {
+      localStorage.setItem(
+        "save",
+        JSON.stringify({
+          score: this.state.score,
+          lastSave: new Date().getTime(),
+        })
+      );
+    }, 10000);
+  };
 
   handlePassivePoints = () => {
     setInterval(() => {
