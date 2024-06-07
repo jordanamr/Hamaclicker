@@ -259,7 +259,7 @@ export function getUsers() {
 }
 
 export function getCardsCount() {
-  const username = [...users];
+  const username = [...getUsers()];
   const test = username.map(function (e) {
     return { username: e.username, count: 0 };
   });
@@ -269,6 +269,6 @@ export function getCardsCount() {
 
 // TODO sort cards by descending prices (el con)
 export function sortAscending(){
-  const users = [...users];
+  const users = [...getUsers()];
   return users.sort((a, b) => a - b)
 }
