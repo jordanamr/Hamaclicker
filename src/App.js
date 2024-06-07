@@ -101,7 +101,7 @@ class App extends Component {
           {welcomTip === true ? (
             <div className="welcom__tip">
               <span onClick={this.closeWelcomTip}> fermer </span>
-              Clique sur le chiffre pour gagner des Hamacoins et découvrir les
+              Clique sur le chiffre AAAAAAA pour gagner des Hamacoins et découvrir les
               cartes (arrête de cheater Hanako)
             </div>
           ) : null}
